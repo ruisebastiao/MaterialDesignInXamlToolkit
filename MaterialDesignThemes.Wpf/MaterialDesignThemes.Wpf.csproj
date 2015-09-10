@@ -80,6 +80,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\MaterialDesignTheme.DataGrid.ComboBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\MaterialDesignTheme.DataGrid.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -88,11 +92,35 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\MaterialDesignTheme.GridSplitter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\MaterialDesignTheme.Label.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\MaterialDesignTheme.MahApps.Dialogs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\MaterialDesignTheme.Menu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\MaterialDesignTheme.PasswordBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\MaterialDesignTheme.ProgressBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\MaterialDesignTheme.ScrollBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\MaterialDesignTheme.ScrollViewer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -148,12 +176,21 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\MaterialDesignTheme.ToolBarTray.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\MaterialDesignTheme.ToolTip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Card.cs" />
     <Compile Include="Clock.cs" />
     <Compile Include="ClockChoiceMadeEventArgs.cs" />
     <Compile Include="ClockItemButton.cs" />
+    <Compile Include="ColorZone.cs" />
     <Compile Include="Converters\BrushToRadialGradientBrushConverter.cs" />
     <Compile Include="Converters\CalendarDateCoalesceConverter.cs" />
     <Compile Include="Converters\ClockItemIsCheckedConverter.cs" />
@@ -165,9 +202,11 @@
     <Compile Include="DataGridAssist.cs" />
     <Compile Include="DateTimeEx.cs" />
     <Compile Include="ListSortDirectionIndicator.cs" />
+    <Compile Include="MaterialDataGridComboBoxColumn.cs" />
     <Compile Include="MaterialDataGridTextColumn.cs" />
     <Compile Include="MaterialDateDisplay.cs" />
-    <Compile Include="PasswordField.cs" />
+    <Compile Include="PaletteHelper.cs" />
+    <Compile Include="PasswordFieldAssist.cs" />
     <Compile Include="ProgressLoop.cs" />
     <Compile Include="ProgressLoopDev.xaml.cs">
       <DependentUpon>ProgressLoopDev.xaml</DependentUpon>
@@ -185,10 +224,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="TextField.cs" />
+    <Compile Include="TextFieldAssist.cs" />
     <Compile Include="Converters\TextFieldHintVisibilityConverter.cs" />
     <Compile Include="TimePicker.cs" />
-    <Compile Include="VisualFeedbackContentControl.cs" />
+    <Compile Include="ToolTipAssist.cs" />
+    <Compile Include="RippleAssist.cs" />
+    <Compile Include="Ripple.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -216,6 +257,12 @@
     <Resource Include="Resources\Roboto\Roboto-Bold.ttf" />
     <Resource Include="Resources\Roboto\Roboto-BlackItalic.ttf" />
     <Resource Include="Resources\Roboto\Roboto-Black.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MaterialDesignColors.Wpf\MaterialDesignColors.Wpf.csproj">
+      <Project>{90B53209-C60C-4655-B28D-A1B3E1044BA3}</Project>
+      <Name>MaterialDesignColors.Wpf</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
